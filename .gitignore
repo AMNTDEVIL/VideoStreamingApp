@@ -1,0 +1,20 @@
+# Backend (Spring Boot)
+/backend/target/
+*.log
+*.class
+*.jar
+*.war
+*.iml
+/.idea/
+*.db
+
+# Frontend (Flutter)
+frontend/build/
+.flutter-plugins
+.packages
+pubspec.lock
+
+# General
+.DS_Store
+*.swp
+.env
