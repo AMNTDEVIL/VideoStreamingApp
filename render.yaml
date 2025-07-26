@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: video-stream-backend
+    env: java
+    buildCommand: ./gradlew build
+    startCommand: java -jar build/libs/*.jar
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://your-db-host:5432/videostreamdb
+      - key: SPRING_DATASOURCE_USERNAME
+        value: your-username
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: your-password
+    buildEnvironmentVariables:
+      - key: JAVA_VERSION
+        value: 17
+
