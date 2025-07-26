@@ -2,7 +2,7 @@
 FROM gradle:7.6.1-jdk17 AS build
 WORKDIR /app
 COPY . .
-RUN gradle build --no-daemon -x test
+RUN ./gradlew build --no-daemon -x test
 
 # Stage 2: Run the jar
 FROM openjdk:17-jdk-slim
