@@ -16,7 +16,7 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/auth/**",           // Existing
                     "/api/users/register",    // Add this ✅
-                    "/api/users/login",       // (Optional: for login later)
+                    "/api/users/login",
                     "/error"                  // Allow error page access
                 ).permitAll()
                 .anyRequest().authenticated()
