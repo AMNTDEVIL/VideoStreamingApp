@@ -2,9 +2,9 @@ services:
   - type: web
     name: video-stream-backend
     env: java
+    rootDir: backend       # Important! Points to where Dockerfile is and backend code lives
     buildCommand: ./gradlew build
     startCommand: java -jar build/libs/*.jar
-    rootDir: backend
     plan: free
     envVars:
       - key: SPRING_DATASOURCE_URL
@@ -13,6 +13,3 @@ services:
         value: amntdevil
       - key: SPRING_DATASOURCE_PASSWORD
         value: PRATIK@1234
-    buildEnvironmentVariables:
-      - key: JAVA_VERSION
-        value: 17
