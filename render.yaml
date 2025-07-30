@@ -5,10 +5,11 @@ services:
     rootDir: backend               # 📁 Where Dockerfile lives
     plan: free
 
-    envVars:
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://my-postgres:5432/videostreamdb
-      - key: SPRING_DATASOURCE_USERNAME
-        value: amntdevil
-      - key: SPRING_DATASOURCE_PASSWORD
-        value: PRATIK@1234
+envVars:
+  - key: SPRING_DATASOURCE_URL
+    value: jdbc:postgresql://your-db-host:5432/videostreamdb
+  - key: SPRING_DATASOURCE_USERNAME
+    value: amntdevil
+  - key: SPRING_DATASOURCE_PASSWORD
+    fromSecret: my-db-password
+
