@@ -28,7 +28,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-
+	implementation 'com.backblaze.b2:b2-sdk-core:6.4.0'
+	implementation 'com.backblaze.b2:b2-sdk-httpclient:6.4.0'
 }
 
 tasks.named('test') {

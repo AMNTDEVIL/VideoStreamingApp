@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.videostreamingapp.backend.dto.request.PasswordRequest;
 import com.example.videostreamingapp.backend.dto.request.UpdateRequest;
 import com.example.videostreamingapp.backend.entity.UserEntity;
 import com.example.videostreamingapp.backend.repository.UserRepository;
@@ -38,6 +39,15 @@ public class UserService {
     user.setProfilePicture(request.getProfilePicture());
 
     return userRepository.save(user);
+    }
+public UserEntity updatePassword(PasswordRequest request) {
+    Optional<UserEntity> userOpt = userRepository.findByUserName(request.getUserName());
+    UserEntity user = userOpt.orElseThrow(() -> new RuntimeException("User not found"));
+
+    user.setPassword(request.getPassword());
+    return userRepository.save(user);
 }
+
+
 
 }
